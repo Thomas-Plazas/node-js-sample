@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Build docker file
           command: |
-            docker build . 
+            docker build .
       - run:
           name: Run docker
           command: |
