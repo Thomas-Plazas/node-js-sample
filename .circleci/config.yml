@@ -6,7 +6,7 @@ version: 2.1
 
 jobs:
   build:
-    working_directory: /app
+    working_directory: /
     docker:
       - image: docker:17.05.0-ce-git
     steps:
@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Run docker
           command: |
-            docker run -d --name instance app
+            docker run -d --name instance
             docker run --network container:instance appropriate/curl --retry 10 --retry-connrefused http://localhost:8080
 
 # Invoke jobs via workflows
